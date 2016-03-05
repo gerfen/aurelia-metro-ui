@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Aurelia Metro UI</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="dist/css/metro.css" rel="stylesheet" />
+    <link href="dist/css/metro-icons.css" rel="stylesheet" />
+    <link href="dist/css/metro-responsive.css" rel="stylesheet" />
+    <link href="dist/css/styles.css" rel="stylesheet" />
+    
+  </head>
+  <body aurelia-app="demo/main">
+   <div class="splash align-center">
+        <h3> Aurelai Metro UI</h3>
+        <div>
+            Loading <span class="mif-loop2 mif-ani-pulse"></span>
+        </div>
+    </div>
+  
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+      SystemJS.import('aurelia-bootstrapper');
+    </script>
+  </body>
+</html>

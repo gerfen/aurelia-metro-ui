@@ -1,0 +1,23 @@
+{
+  "name": "aurelia-metro-ui",
+  "version": "1.0.0",
+  "description": "Metro UI library for Aurelia framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "jspm": {
+    "dependencies": {
+      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0-beta.1.1.4",
+      "aurelia-framework": "npm:aurelia-framework@^1.0.0-beta.1.1.4",
+      "aurelia-ui-virtualization": "npm:aurelia-ui-virtualization@^0.3.2"
+    },
+    "devDependencies": {}
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "http-server": "^0.9.0"
+  }
+}
