@@ -1,0 +1,14 @@
+<template>
+    <div>
+        <ul class="horizontal-menu" style="margin-left: -20px">
+            <li repeat.for="row of router.navigation">
+                <metro-ui-dropdown-toggle>
+                    ${row.title}
+                 </metro-ui-dropdown-toggle>
+                 <!--
+                <a class="${row.isActive ? 'active' : 'notActive'}" href.bind="row.href">${row.title}</a>
+                -->
+            </li>
+        </ul>
+    </div>
+</template>
