@@ -11,7 +11,54 @@ define(["require", "exports", "aurelia-framework"], function (require, exports, 
         function NavBar() {
         }
         NavBar.prototype.attached = function () {
-            var x = this.router;
+            var subMenus = {};
+            this.config = [];
+            var self = this;
+            this.router.navigation.forEach(function (navModel) {
+                var navConf = navModel.config;
+                if (!navConf.parentModule) {
+                    self.config.push({
+                        title: navConf.title,
+                        href: navModel.href,
+                        isSubMenu: false
+                    });
+                }
+                else if (subMenus[navConf.parentModule]) {
+                    subMenus[navConf.parentModule].routes.push({
+                        title: navConf.title,
+                        href: navModel.href,
+                        isSubMenu: false
+                    });
+                }
+                else {
+                    subMenus[navConf.parentModule] = {
+                        title: navConf.parentModule,
+                        isSubMenu: true,
+                        routes: [{
+                                title: navConf.title,
+                                href: navModel.href,
+                                isSubMenu: false
+                            }]
+                    };
+                }
+            });
+            for (var propName in subMenus) {
+                if (subMenus.hasOwnProperty(propName)) {
+                    self.config.push(subMenus[propName]);
+                }
+            }
+        };
+        NavBar.prototype.toggleMenu = function (row) {
+            row.isOpen = !row.isOpen;
+            //if(row.isOpen){
+            //  document.addEventListener("click",this.documentClick.bind(this));
+            //} 
+        };
+        NavBar.prototype.documentClick = function () {
+            document.removeEventListener("click", this.documentClick);
+            //this.config.forEach((item)=>{
+            //   item.isOpen = false;
+            //});
         };
         __decorate([
             aurelia_framework_1.bindable

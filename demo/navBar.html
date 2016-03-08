@@ -1,13 +1,17 @@
 <template>
     <div>
+        <a href="/" class="app-bar-element branding"><img src="demo/images/wn8.png" style="height: 28px; display: inline-block; margin-right: 10px;">
+         AURELIA METRO UI
+         </a>
         <ul class="horizontal-menu" style="margin-left: -20px">
-            <li repeat.for="row of router.navigation">
-                <metro-ui-dropdown-toggle>
-                    ${row.title}
-                 </metro-ui-dropdown-toggle>
-                 <!--
-                <a class="${row.isActive ? 'active' : 'notActive'}" href.bind="row.href">${row.title}</a>
-                -->
+            <li repeat.for="row of config">
+                <a if.bind="!row.isSubMenu"  href.bind="row.href">${row.title}</a>
+                <a if.bind="row.isSubMenu" class="dropdown-toggle  ${ row.isOpen ? 'active-toggle' : ''}" click.trigger="toggleMenu(row)">${row.title}</a>
+                <ul class="d-menu" if.bind="row.isSubMenu" show.bind="row.isOpen" style="display:block">
+                    <li repeat.for="child of row.routes">
+                         <a  href.bind="child.href">${child.title}</a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
