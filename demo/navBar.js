@@ -48,17 +48,16 @@ define(["require", "exports", "aurelia-framework"], function (require, exports, 
                 }
             }
         };
-        NavBar.prototype.toggleMenu = function (row) {
-            row.isOpen = !row.isOpen;
-            //if(row.isOpen){
-            //  document.addEventListener("click",this.documentClick.bind(this));
-            //} 
-        };
-        NavBar.prototype.documentClick = function () {
-            document.removeEventListener("click", this.documentClick);
-            //this.config.forEach((item)=>{
-            //   item.isOpen = false;
-            //});
+        NavBar.prototype.toggleMenu = function ($event, item) {
+            var self = this;
+            item.isOpen = !item.isOpen;
+            if (item.isOpen) {
+                document.addEventListener("click", function _func() {
+                    document.removeEventListener('click', _func);
+                    item.isOpen = false;
+                });
+            }
+            $event.stopPropagation();
         };
         __decorate([
             aurelia_framework_1.bindable

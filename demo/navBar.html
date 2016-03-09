@@ -4,11 +4,11 @@
          AURELIA METRO UI
          </a>
         <ul class="horizontal-menu" style="margin-left: -20px">
-            <li repeat.for="row of config">
-                <a if.bind="!row.isSubMenu"  href.bind="row.href">${row.title}</a>
-                <a if.bind="row.isSubMenu" class="dropdown-toggle  ${ row.isOpen ? 'active-toggle' : ''}" click.trigger="toggleMenu(row)">${row.title}</a>
-                <ul class="d-menu" if.bind="row.isSubMenu" show.bind="row.isOpen" style="display:block">
-                    <li repeat.for="child of row.routes">
+            <li repeat.for="item of config">
+                <a if.bind="!item.isSubMenu"  href.bind="item.href">${item.title}</a>
+                <a if.bind="item.isSubMenu" class="dropdown-toggle  ${ item.isOpen ? 'active-toggle' : ''}" click.delegate="toggleMenu($event,item)">${item.title}</a>
+                <ul class="d-menu" if.bind="item.isSubMenu" show.bind="item.isOpen" style="display:block">
+                    <li repeat.for="child of item.routes">
                          <a  href.bind="child.href">${child.title}</a>
                     </li>
                 </ul>
