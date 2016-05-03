@@ -1,19 +1,19 @@
 System.config({
   baseURL: "/",
   defaultJSExtensions: true,
-  transpiler: "none",
+  transpiler: false,
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+
   packages: {
     "/aurelia-metro-ui": {
       "main": "aurelia-metro-ui.js",
-      "dependencies": {
-      
-      }
+      "dependencies": {}
     }
   },
+
   map: {
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.2.0",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.2.2",
