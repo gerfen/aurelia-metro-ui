@@ -1,5 +1,5 @@
 # aurelia-metro-ui
- This library represents metro style UI controlls fro aurelia framework.
+ This library represents metro style UI controlls for Aurelia framework.
     
 ## Dependencies
 
@@ -8,10 +8,6 @@ This library has **NO** external dependencies.
 ## Used By
 
 This library is a plugin and is not used by the core framework.
-
-## Platform Support
-
-This library can be used in the **browser** as well as on the **server**.
 
 ## Building The Code
 
