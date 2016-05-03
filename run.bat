@@ -1,1 +1,0 @@
-start node_modules\.bin\http-server.cmd
