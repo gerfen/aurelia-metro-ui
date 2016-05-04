@@ -38,7 +38,7 @@ gulp.task('compile-sample', [], function(done) {
 // this task utilizes the browsersync plugin
 // to create a dev server instance
 // at http://localhost:9000
-gulp.task('run-sample', ['build-amd','compile-sample'], function(done) {
+gulp.task('run-sample', ['compile','compile-sample'], function(done) {
   var bs = browserSync.create('Sample Server');
 
   bs.init({

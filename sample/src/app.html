@@ -1,5 +1,15 @@
 <template>
     <h1>${name}</h1>
     <button class="button primary" click.delegate="onClick()">Click me!</button>
-    <mu-button></mu-button>
+    <metro-button></mu-button>
+    <div style="width:400px" class="tabcontrol" metro-tab-control>
+        <ul class="tabs">
+            <li><a href="#">Caption 1</a></li>
+            <li><a href="#">Caption 2</a></li>
+        </ul>
+        <div class="frames">
+            <div class="frame">1</div>
+            <div class="frame">4</div>
+        </div>
+    </div>
 </template>

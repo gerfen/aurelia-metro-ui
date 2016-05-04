@@ -8,7 +8,6 @@ var gulp = require('gulp'),
     tools = require('aurelia-tools'),
     concat = require('gulp-concat'),
     insert = require('gulp-insert'),
-    
     paths = require('../paths'),
     buildUtil = require('../buildUtil'),
     buildLogger = require('../buildLogger')
@@ -70,7 +69,7 @@ gulp.task('concat-index', function(){
 // https://www.npmjs.com/package/gulp-plumber
 //var typescriptCompiler = typescriptCompiler || null;
 
-gulp.task('build-amd',['build-html-amd'], function() {
+gulp.task('compile',['copy-html','copy-ts'], function() {
   //if(!typescriptCompiler) {
   //  typescriptCompiler = typescript.create(require('../../tsconfig.json').compilerOptions);
   //}
@@ -99,7 +98,12 @@ gulp.task('build-amd',['build-html-amd'], function() {
     .pipe(gulp.dest(paths.output + 'amd'));
 });
 
-gulp.task('build-html-amd', function () {
+gulp.task('copy-ts', function () {
+  return gulp.src(paths.ts)
+    .pipe(gulp.dest(paths.output + 'amd'));
+});
+
+gulp.task('copy-html', function () {
   return gulp.src(paths.html)
     .pipe(gulp.dest(paths.output + 'amd'));
 });
@@ -107,9 +111,9 @@ gulp.task('build-html-amd', function () {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    'build-amd',
+    'compile',
     //'build-index',
-    //['build-es2015-temp', 'build-commonjs', 'build-amd', 'build-system', 'build-es2015', 'build-css'],
+    //['build-es2015-temp', 'build-commonjs', 'compile', 'build-system', 'build-es2015', 'build-css'],
     //'minifyCSS',
     //'build-dts',
     callback
