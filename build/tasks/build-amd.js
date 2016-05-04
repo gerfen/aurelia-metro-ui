@@ -1,7 +1,6 @@
 var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     plumber = require('gulp-plumber'),
-    //typescript = require('gulp-tsb'),
     ts = require('gulp-typescript'),
     gutil = require('gulp-util'),
     gulpIgnore = require('gulp-ignore'),
@@ -77,7 +76,18 @@ gulp.task('build-amd',['build-html-amd'], function() {
   //}
   var tsProject = ts.createProject('tsconfig.json');
   
-  return gulp.src(paths.src + '**/*.ts')
+  return gulp.src([paths.src + '**/*.ts',
+                  'node_modules/aurelia-framework/dist/aurelia-framework.d.ts',
+                  'node_modules/aurelia-logging/dist/aurelia-logging.d.ts',
+                  'node_modules/aurelia-loader/dist/aurelia-loader.d.ts',
+                  'node_modules/aurelia-pal/dist/aurelia-pal.d.ts',
+                  'node_modules/aurelia-templating/dist/aurelia-templating.d.ts',
+                  'node_modules/aurelia-path/dist/aurelia-path.d.ts',
+                  'node_modules/aurelia-binding/dist/aurelia-binding.d.ts',
+                  'node_modules/aurelia-metadata/dist/aurelia-metadata.d.ts',
+                  'node_modules/aurelia-dependency-injection/dist/aurelia-dependency-injection.d.ts',
+                  'node_modules/aurelia-task-queue/dist/aurelia-task-queue.d.ts',
+                  'custom_typings/**/*.d.ts'])
     .pipe(plumber())
     //.pipe(sourcemaps.init({loadMaps: true}))
     //.pipe(typescriptCompiler())

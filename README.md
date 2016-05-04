@@ -1,5 +1,6 @@
 # aurelia-metro-ui
  This library represents metro style UI controlls for Aurelia framework.
+ Design and styles are based on the original [Metro UI CSS](https://metroui.org.ua/)
     
 ## Dependencies
 

@@ -2,6 +2,9 @@ node_modules/
 
 jspm_packages/
 
-bower_components
-/
+bower_components/
+
 sample/jspm_packages/
+
+src/*.js/
+
