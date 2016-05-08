@@ -14,6 +14,7 @@ module.exports = {
   //tests: 'test/**/*.js',
   output: 'dist/',
   sample: 'sample',
+  tests: 'test',
   doc:'./doc',
   packageName: pkg.name,
   styleFolder: './styles',

@@ -2,7 +2,8 @@
     <h1>${name}</h1>
     <button class="button primary" click.delegate="onClick()">Click me!</button>
     <metro-button></mu-button>
-    <div style="width:400px" class="tabcontrol" metro-tab-control>
+    Sel Index ${selectedIndex}
+    <div style="width:400px" class="tabcontrol" metro-tab-control="selectedIndex = 1">
         <ul class="tabs">
             <li><a href="#">Caption 1</a></li>
             <li><a href="#">Caption 2</a></li>

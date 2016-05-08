@@ -17,27 +17,44 @@ define(["require", "exports", 'aurelia-framework'], function (require, exports, 
         MetroTabControl.prototype.attached = function () {
             var tabsContainer = this.element.querySelector('.tabs');
             var framesContainer = this.element.querySelector('.frames');
+            if (!this.selectedIndex) {
+                this.selectedIndex = 0;
+            }
             if (tabsContainer && framesContainer) {
                 this.tabsHeaders = tabsContainer.querySelectorAll('ul a');
                 this.frames = framesContainer.querySelectorAll('.frame');
-                if (this.frames.length == this.tabsHeaders.length) {
+                if (this.frames.length > 0 && this.frames.length == this.tabsHeaders.length) {
                     this.hasError = false;
                     for (var i = 0; i < this.tabsHeaders.length; i++) {
                         var header = this.tabsHeaders[i];
                         header.addEventListener('click', this.tabHeaderClick.bind(this));
                         header.setAttribute("metro-tab-index", i.toString());
                     }
+                    this.selectTabByIndex(0);
                 }
             }
             if (this.hasError) {
                 throw "metro-tab-control must have tabs and frames with same number of child elements!";
             }
         };
+        MetroTabControl.prototype.selectTabByIndex = function (index) {
+            for (var i = 0; i < this.tabsHeaders.length; i++) {
+                var header = this.tabsHeaders[i];
+                var frame = this.frames[i];
+                if (i == index) {
+                    header.parentElement.className = 'active';
+                    frame.style.display = 'block';
+                }
+                else {
+                    header.parentElement.className = '';
+                    frame.style.display = 'none';
+                }
+            }
+        };
         MetroTabControl.prototype.tabHeaderClick = function (event) {
             var header = event.target;
-            var index = parseInt(header.getAttribute("metro-tab-index"));
-            var selFrame = this.frames[index];
-            selFrame.style.background = "red";
+            this.selectedIndex = parseInt(header.getAttribute("metro-tab-index"));
+            this.selectTabByIndex(this.selectedIndex);
         };
         MetroTabControl.prototype.detached = function () {
             if (!this.hasError) {
@@ -46,6 +63,10 @@ define(["require", "exports", 'aurelia-framework'], function (require, exports, 
                 }
             }
         };
+        __decorate([
+            aurelia_framework_1.bindable, 
+            __metadata('design:type', Number)
+        ], MetroTabControl.prototype, "selectedIndex", void 0);
         MetroTabControl = __decorate([
             aurelia_framework_1.customAttribute('metro-tab-control'),
             aurelia_framework_1.inject(Element), 
