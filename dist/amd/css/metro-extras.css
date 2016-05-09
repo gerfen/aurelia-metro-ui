@@ -1,0 +1,41 @@
+body {
+  overflow-x: hidden;
+}
+
+.splash{
+    text-shadow:0 5px 5px #7d7d7d;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:50px
+}
+
+.spinner div {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: -20px;
+  top: 13px;
+  background-color: #2086bf;
+  border-radius: 50%;
+  
+}
+
+.spinner.active div {
+  animation: move 4s infinite cubic-bezier(.2,.64,.81,.23);
+}
+
+.spinner div:nth-child(2) {
+  animation-delay: 150ms;
+}
+.spinner div:nth-child(3) {
+  animation-delay: 300ms;
+}
+.spinner div:nth-child(4) {
+  animation-delay: 450ms;
+}
+@keyframes move {
+  0% {left: 0%;}
+  75% {left:100%;}
+  100% {left:100%;}
+}

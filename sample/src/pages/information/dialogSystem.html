@@ -1,0 +1,30 @@
+<template>
+    <h3 class="padding20 align-center">Dialog System</h3>
+    <hr class="bg-olive">
+    
+    <div class="example">
+        <h5>Message Box</h3>  
+        <form role="form" submit.delegate="showMessageBox()">
+            <div class="cell">
+                <label>Title</label>
+                <div class="input-control text full-size">
+                    <input type="text" value.bind="msgTitle">
+                </div>
+            </div>
+            <div class="cell">
+                <label>Message</label>
+                <div class="input-control text full-size">
+                    <input type="text" value.bind="msgMessage">
+                </div>
+            </div>
+            <div class="cell">
+                <br />
+                <button class="button primary" type="submit">Show Message Box</button>
+            </div>
+        </form>
+     </div>
+     <div class="example">
+         <h5>Dialogs</h3>
+     </div>
+     
+</template>

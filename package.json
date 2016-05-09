@@ -79,5 +79,11 @@
     "typescript": "^1.8.10",
     "vinyl-paths": "^2.1.0",
     "yargs": "^4.6.0"
+  },
+  "dependencies": {
+    "aurelia-event-aggregator": "^1.0.0-beta.1.2.0",
+    "aurelia-history": "^1.0.0-beta.1.2.0",
+    "aurelia-route-recognizer": "^1.0.0-beta.1.2.0",
+    "aurelia-router": "^1.0.0-beta.1.2.1"
   }
 }

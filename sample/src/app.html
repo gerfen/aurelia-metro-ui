@@ -1,16 +1,7 @@
 <template>
-    <h1>${name}</h1>
-    <button class="button primary" click.delegate="onClick()">Click me!</button>
-    <metro-button></mu-button>
-    Sel Index ${selectedIndex}
-    <div style="width:400px" class="tabcontrol" metro-tab-control="selectedIndex = 1">
-        <ul class="tabs">
-            <li><a href="#">Caption 1</a></li>
-            <li><a href="#">Caption 2</a></li>
-        </ul>
-        <div class="frames">
-            <div class="frame">1</div>
-            <div class="frame">4</div>
-        </div>
+    <require from="src/navBar"></require>
+    <div class="container">
+        <nav-bar router.bind="router"></nav-bar> 
+        <router-view></router-view>  
     </div>
 </template>

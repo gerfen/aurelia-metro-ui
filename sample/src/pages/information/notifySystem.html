@@ -1,0 +1,138 @@
+<template>
+    <h3 class="padding20 align-center">Notify System</h3>
+    <hr class="bg-olive">
+    <div class="example">
+            <div class="grid">
+                <div class="row cells4">
+                    <div class="cell">
+                        <div class="notify">
+                            <span class="notify-title">Notify</span>
+                            <span class="notify-text">This is a default notify style</span>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="notify">
+                            <span class="notify-icon mif-vpn-publ"></span>
+                            <span class="notify-title">Notify</span>
+                            <span class="notify-text">Notify with icon</span>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="notify">
+                            <span class="notify-closer"></span>
+                            <span class="notify-title">Notify</span>
+                            <span class="notify-text">Notify with closer</span>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="notify success">
+                            <span class="notify-closer"></span>
+                            <span class="notify-title">Success</span>
+                            <span class="notify-text">Notify with success</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row cells4">
+                    <div class="cell">
+                        <div class="notify alert">
+                            <span class="notify-closer"></span>
+                            <span class="notify-title">Alert</span>
+                            <span class="notify-text">Notify with alert</span>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="notify warning">
+                            <span class="notify-closer"></span>
+                            <span class="notify-title">Warning</span>
+                            <span class="notify-text">Notify with warning</span>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="notify info">
+                            <span class="notify-closer"></span>
+                            <span class="notify-title">Info</span>
+                            <span class="notify-text">Notify with info</span>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="notify shadow">
+                            <span class="notify-closer"></span>
+                            <span class="notify-title">Shadow</span>
+                            <span class="notify-text">Notify with shadow</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="example">
+             <form role="form" submit.delegate="showNotify()">
+                        <div class="grid">
+                            <div class="row cells2">
+                                <div class="cell">
+                                    <label class="align-right">Icon Class</label>
+                                </div>
+                                <div class="cell">
+                                        <div class="input-control text">
+                                            <input type="text" value.bind="options.iconClass">
+                                        </div>
+                                </div>
+                            </div>
+                             <div class="row cells2">
+                                <div class="cell">
+                                   <label class="align-right">Caption</label>
+                                </div>
+                                <div class="cell">
+                                       <div class="input-control text">
+                                            <input type="text" value.bind="options.caption">
+                                        </div>
+                                </div>
+                            </div>
+                              <div class="row cells2">
+                                <div class="cell">
+                                   <label class="align-right">Content</label>
+                                </div>
+                                <div class="cell">
+                                        <div class="input-control text">
+                                            <input type="text" value.bind="options.content">
+                                        </div>
+                                </div>
+                            </div>
+                              <div class="row cells2">
+                                <div class="cell">
+                                    <label class="align-right">Notify Class</label>
+                                </div>
+                                <div class="cell">
+                                        <div class="input-control select">
+                                            <select value.bind="options.notifyClass">
+                                                <option>success</option>
+                                                <option>alert</option>
+                                                <option>warning</option>
+                                                <option>info</option>
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                </div>
+                            </div>
+                             <div class="row ">
+                                    <div class="cell">
+                                        <br />
+                                        <button class="button primary" type="submit">Show Message Box</button>
+                                    </div>
+                                </div>
+                        </div>
+                </form>
+         </div>
+         <pre class=" language-javascript">   
+              <code  class="language-javascript">
+                  <span class="token keyword">export</span> 
+                  <span class="token keyword">class</span> 
+                  <span class="token class-name">Hello</span> 
+                  <span class="token punctuation">{</span>
+                    firstName 
+                    <span class="token operator">=</span> 
+                    <span class="token string">'John'</span>
+             </code>
+        </pre>
+
+</template>

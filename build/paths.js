@@ -9,8 +9,8 @@ module.exports = {
   //source: appRoot + '**/*.js',
   html: appRoot + '**/*.html',
   ts: appRoot + '**/*.ts',
-  style: 'styles/**/*.css',
-  less: appRoot + 'styles/**/*.less',
+  style: appRoot +'css/**/*.css',
+  //less: appRoot + 'css/**/*.less',
   //tests: 'test/**/*.js',
   output: 'dist/',
   sample: 'sample',
@@ -18,4 +18,5 @@ module.exports = {
   doc:'./doc',
   packageName: pkg.name,
   styleFolder: './styles',
+  fonts: appRoot+ 'fonts/*'
 };

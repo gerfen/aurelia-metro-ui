@@ -15,9 +15,10 @@ export class MetroTabControl {
     }
     
     attached() {  
-        var tabsContainer = this.element.querySelector('.tabs');    
-        var framesContainer = this.element.querySelector('.frames');
         
+        var tabsContainer = this.element.querySelector('.tabs');    
+        var framesContainer = this.element.querySelector('.frames'); 
+       
         //Set default value
         if(!this.selectedIndex){
             this.selectedIndex = 0;
@@ -34,7 +35,7 @@ export class MetroTabControl {
                     header.addEventListener('click',this.tabHeaderClick.bind(this));    
                     header.setAttribute("metro-tab-index",i.toString());
                 } 
-                this.selectTabByIndex(0);
+                this.selectTabByIndex(this.selectedIndex);
             }    
         }
         
@@ -45,7 +46,8 @@ export class MetroTabControl {
     }
     
     private selectTabByIndex(index:Number){
-         for(let i = 0;i < this.tabsHeaders.length;i++){
+        if(index >=0 && index < this.tabsHeaders.length){
+           for(let i = 0;i < this.tabsHeaders.length;i++){
               let header = <Element>this.tabsHeaders[i];
               let frame  = <HTMLElement>this.frames[i];
               
@@ -56,14 +58,25 @@ export class MetroTabControl {
                   header.parentElement.className = '';
                   frame.style.display = 'none';
               }
-         } 
+            } 
+        }else{
+            throw "metro-tab-control: selected-index must be between 0 and " + (this.tabsHeaders.length-1).toString();
+        }
     }
     
     private tabHeaderClick(event : Event){
        var header  = <Element> event.target;
        this.selectedIndex = parseInt(header.getAttribute("metro-tab-index")); 
-        
+       event.preventDefault();
+         
        this.selectTabByIndex(this.selectedIndex);
+    }
+    
+    
+    selectedIndexChanged(newValue){
+        if(newValue){
+            this.selectTabByIndex(parseInt(newValue.toString()));    
+        }
     }
     
     detached() {  

@@ -30,7 +30,7 @@ define(["require", "exports", 'aurelia-framework'], function (require, exports, 
                         header.addEventListener('click', this.tabHeaderClick.bind(this));
                         header.setAttribute("metro-tab-index", i.toString());
                     }
-                    this.selectTabByIndex(0);
+                    this.selectTabByIndex(this.selectedIndex);
                 }
             }
             if (this.hasError) {
@@ -38,23 +38,34 @@ define(["require", "exports", 'aurelia-framework'], function (require, exports, 
             }
         };
         MetroTabControl.prototype.selectTabByIndex = function (index) {
-            for (var i = 0; i < this.tabsHeaders.length; i++) {
-                var header = this.tabsHeaders[i];
-                var frame = this.frames[i];
-                if (i == index) {
-                    header.parentElement.className = 'active';
-                    frame.style.display = 'block';
+            if (index >= 0 && index < this.tabsHeaders.length) {
+                for (var i = 0; i < this.tabsHeaders.length; i++) {
+                    var header = this.tabsHeaders[i];
+                    var frame = this.frames[i];
+                    if (i == index) {
+                        header.parentElement.className = 'active';
+                        frame.style.display = 'block';
+                    }
+                    else {
+                        header.parentElement.className = '';
+                        frame.style.display = 'none';
+                    }
                 }
-                else {
-                    header.parentElement.className = '';
-                    frame.style.display = 'none';
-                }
+            }
+            else {
+                throw "metro-tab-control: selected-index must be between 0 and " + (this.tabsHeaders.length - 1).toString();
             }
         };
         MetroTabControl.prototype.tabHeaderClick = function (event) {
             var header = event.target;
             this.selectedIndex = parseInt(header.getAttribute("metro-tab-index"));
+            event.preventDefault();
             this.selectTabByIndex(this.selectedIndex);
+        };
+        MetroTabControl.prototype.selectedIndexChanged = function (newValue) {
+            if (newValue) {
+                this.selectTabByIndex(parseInt(newValue.toString()));
+            }
         };
         MetroTabControl.prototype.detached = function () {
             if (!this.hasError) {

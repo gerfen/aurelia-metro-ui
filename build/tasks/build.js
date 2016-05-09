@@ -69,7 +69,7 @@ gulp.task('concat-index', function(){
 // https://www.npmjs.com/package/gulp-plumber
 //var typescriptCompiler = typescriptCompiler || null;
 
-gulp.task('compile',['copy-html','copy-ts'], function() {
+gulp.task('compile',['copy-html','copy-css','copy-fonts'], function() {
   //if(!typescriptCompiler) {
   //  typescriptCompiler = typescript.create(require('../../tsconfig.json').compilerOptions);
   //}
@@ -106,6 +106,16 @@ gulp.task('copy-ts', function () {
 gulp.task('copy-html', function () {
   return gulp.src(paths.html)
     .pipe(gulp.dest(paths.output + 'amd'));
+});
+
+gulp.task('copy-css', function () {
+  return gulp.src(paths.style)
+    .pipe(gulp.dest(paths.output + 'amd/css'));
+});
+
+gulp.task('copy-fonts', function () {
+  return gulp.src(paths.fonts)
+    .pipe(gulp.dest(paths.output + 'amd/fonts'));
 });
 
 gulp.task('build', function(callback) {

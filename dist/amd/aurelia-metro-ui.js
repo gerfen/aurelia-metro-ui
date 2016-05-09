@@ -1,4 +1,4 @@
-define(["require", "exports", './services/muDialogService', './services/muNotifyService'], function (require, exports, muDialogService_1, muNotifyService_1) {
+define(["require", "exports", './services/muDialogService', './services/muNotifyService', '/aurelia-metro-ui/css/metro.css!', '/aurelia-metro-ui/css/metro-icons.css!', '/aurelia-metro-ui/css/metro-responsive.css!', '/aurelia-metro-ui/css/metro-extras.css!'], function (require, exports, muDialogService_1, muNotifyService_1) {
     "use strict";
     function configure(config, callback) {
         config.globalResources('./controls/metro-button');

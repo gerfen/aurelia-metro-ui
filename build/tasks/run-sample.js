@@ -24,12 +24,16 @@ gulp.task('compile-sample', [], function(done) {
                   'node_modules/aurelia-metadata/dist/aurelia-metadata.d.ts',
                   'node_modules/aurelia-dependency-injection/dist/aurelia-dependency-injection.d.ts',
                   'node_modules/aurelia-task-queue/dist/aurelia-task-queue.d.ts',
+                  'node_modules/aurelia-router/dist/aurelia-router.d.ts',
+                  'node_modules/aurelia-history/dist/aurelia-history.d.ts',
+                   'node_modules/aurelia-route-recognizer/dist/aurelia-route-recognizer.d.ts',
+                   'node_modules/aurelia-event-aggregator/dist/aurelia-event-aggregator.d.ts',
                   'custom_typings/**/*.d.ts'])
     .pipe(plumber())
     //.pipe(sourcemaps.init({loadMaps: true}))
     .pipe(ts(tsProject, undefined, new buildUtil.customTsReporter(logger)))
     //.pipe(sourcemaps.write({includeContent: false, sourceRoot: '/src'}))
-    .pipe(gulp.dest(paths.sample));
+    .pipe(gulp.dest(paths.sample+'/src'));
 });
 
 // this task utilizes the browsersync plugin
