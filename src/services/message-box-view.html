@@ -1,0 +1,19 @@
+<template>
+    <div class="dialog-overlay op-dark">
+        <div  class="padding20 dialog" style="width: auto; height: auto;  position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index:1100">
+            <h1>${title}</h1>
+            <p>
+                ${message}
+            </p>
+            <span class="dialog-close-button" click.delegate="closeClick()"></span>
+            <div>
+                <button class="button success" click.delegate="okClick()">
+                    Ok
+                </button>
+                <button if.bind="buttons == 1" class="button primary" click.delegate="cancelClick()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</template>

@@ -2,7 +2,7 @@ define(["require", "exports", "aurelia-dependency-injection"], function (require
     "use strict";
     var NotifySystem = (function () {
         function NotifySystem() {
-            this.notifyService = aurelia_dependency_injection_1.Container.instance.get('metro-ui-notify-service');
+            this.notifyService = aurelia_dependency_injection_1.Container.instance.get('metro-notify-service');
             this.options = {
                 iconClass: "mif-windows",
                 caption: "Caption",

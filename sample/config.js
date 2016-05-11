@@ -17,6 +17,7 @@ System.config({
   map: {
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.2.0",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.2.2",
+    "aurelia-loader": "npm:aurelia-loader@1.0.0-beta.1.2.0",
     "aurelia-router": "npm:aurelia-router@1.0.0-beta.1.2.1",
     "css": "github:systemjs/plugin-css@0.1.21",
     "typescript": "npm:typescript@1.8.10",
@@ -73,8 +74,8 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.2.1"
     },
     "npm:aurelia-loader@1.0.0-beta.1.2.0": {
-      "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1.2.0",
-      "aurelia-path": "npm:aurelia-path@1.0.0-beta.1.2.1"
+      "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1.2.1",
+      "aurelia-path": "npm:aurelia-path@1.0.0-beta.1.2.2"
     },
     "npm:aurelia-logging-console@1.0.0-beta.1.2.0": {
       "aurelia-logging": "npm:aurelia-logging@1.0.0-beta.1.2.0",
@@ -82,6 +83,9 @@ System.config({
     },
     "npm:aurelia-metadata@1.0.0-beta.1.2.0": {
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.2.1"
+    },
+    "npm:aurelia-metadata@1.0.0-beta.1.2.1": {
+      "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.2.2"
     },
     "npm:aurelia-pal-browser@1.0.0-beta.1.2.0": {
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.2.1"

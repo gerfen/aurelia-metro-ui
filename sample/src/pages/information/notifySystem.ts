@@ -8,7 +8,7 @@ export class NotifySystem{
     
     constructor(){
         
-        this.notifyService =/* <INotifyService>*/ Container.instance.get('metro-ui-notify-service');
+        this.notifyService =/* <INotifyService>*/ Container.instance.get('metro-notify-service');
         this.options =  {
                  iconClass: "mif-windows",
                  caption:  "Caption",

@@ -1,7 +1,7 @@
 <template>
     <h3 class="padding20 align-center">Notify System</h3>
     <hr class="bg-olive">
-    <div class="example">
+    <div class="example" data-text="example">
             <div class="grid">
                 <div class="row cells4">
                     <div class="cell">
@@ -64,46 +64,37 @@
                     </div>
                 </div>
             </div>
-        </div>
-         <div class="example">
+     </div>
+     <div class="example" data-text="live example">
              <form role="form" submit.delegate="showNotify()">
                         <div class="grid">
-                            <div class="row cells2">
-                                <div class="cell">
-                                    <label class="align-right">Icon Class</label>
-                                </div>
-                                <div class="cell">
-                                        <div class="input-control text">
+                            <div class="row">
+                                Icon Class
+                                 <div class="input-control text">
                                             <input type="text" value.bind="options.iconClass">
-                                        </div>
-                                </div>
+                                 </div>                        
                             </div>
-                             <div class="row cells2">
-                                <div class="cell">
-                                   <label class="align-right">Caption</label>
-                                </div>
-                                <div class="cell">
-                                       <div class="input-control text">
+                            <div class="row">
+                                Caption
+                                <div class="input-control text">
                                             <input type="text" value.bind="options.caption">
-                                        </div>
                                 </div>
                             </div>
-                              <div class="row cells2">
-                                <div class="cell">
-                                   <label class="align-right">Content</label>
-                                </div>
-                                <div class="cell">
-                                        <div class="input-control text">
+                            <div class="row">
+                                Caption
+                                <div class="input-control text">
+                                            <input type="text" value.bind="options.caption">
+                                 </div>
+                            </div>
+                            <div class="row">
+                                Content
+                                <div class="input-control text">
                                             <input type="text" value.bind="options.content">
-                                        </div>
-                                </div>
+                                 </div>
                             </div>
-                              <div class="row cells2">
-                                <div class="cell">
-                                    <label class="align-right">Notify Class</label>
-                                </div>
-                                <div class="cell">
-                                        <div class="input-control select">
+                             <div class="row">
+                                Notify Class
+                                 <div class="input-control select">
                                             <select value.bind="options.notifyClass">
                                                 <option>success</option>
                                                 <option>alert</option>
@@ -111,15 +102,15 @@
                                                 <option>info</option>
                                                 <option></option>
                                             </select>
-                                        </div>
-                                </div>
+                                 </div>
                             </div>
-                             <div class="row ">
+                            <div class="row ">
                                     <div class="cell">
                                         <br />
-                                        <button class="button primary" type="submit">Show Message Box</button>
+                                        <button class="button primary" type="submit">Notify</button>
                                     </div>
                                 </div>
+                          </div>
                         </div>
                 </form>
          </div>

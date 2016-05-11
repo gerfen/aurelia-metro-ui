@@ -1,8 +1,8 @@
 {
   "name": "aurelia-metro-ui",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha",
   "description": "UI Freamework for Aurelia",
-  "main": "dist/commonjs/aurelia-metro-ui.js",
+  "main": "dist/amd/aurelia-metro-ui.js",
   "scripts": {
     "test": "gulp test"
   },
@@ -81,9 +81,6 @@
     "yargs": "^4.6.0"
   },
   "dependencies": {
-    "aurelia-event-aggregator": "^1.0.0-beta.1.2.0",
-    "aurelia-history": "^1.0.0-beta.1.2.0",
-    "aurelia-route-recognizer": "^1.0.0-beta.1.2.0",
-    "aurelia-router": "^1.0.0-beta.1.2.1"
+    "aurelia-framework": "^1.0.0-beta.1.2.3"
   }
 }

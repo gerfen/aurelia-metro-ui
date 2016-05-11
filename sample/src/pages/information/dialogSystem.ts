@@ -11,10 +11,10 @@ export class DialogSystem{
     
     
     constructor(){
-        this.dialogService = /*<IDialogService>*/ Container.instance.get('metro-ui-dialog-service');
+        this.dialogService = Container.instance.get('metro-dialog-service');
     }
     
     public showMessageBox(){
-        //this.dialogService.showMessageBox(this.msgTitle,this.msgMessage,MessageBoxButtons.OKCancel);
+        this.dialogService.showMessageBox(this.msgTitle,this.msgMessage,0);
     }
 }
