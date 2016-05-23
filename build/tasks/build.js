@@ -2,6 +2,8 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     plumber = require('gulp-plumber'),
     ts = require('gulp-typescript'),
+    sourcemaps = require('gulp-sourcemaps'),
+    path = require('path'),
     gutil = require('gulp-util'),
     gulpIgnore = require('gulp-ignore'),
     through2 = require('through2'),
@@ -88,13 +90,15 @@ gulp.task('compile',['copy-html','copy-css','copy-fonts'], function() {
                   'node_modules/aurelia-task-queue/dist/aurelia-task-queue.d.ts',
                   'custom_typings/**/*.d.ts'])
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     //.pipe(sourcemaps.init({loadMaps: true}))
     //.pipe(typescriptCompiler())
     .pipe(ts(tsProject, undefined, new buildUtil.customTsReporter(logger)))
     //.on('close', function(code, signal){
     //  gutil.log(gutil.colors.red('Compile code: ' + signal));
     //})
-    //.pipe(sourcemaps.write({includeContent: false, sourceRoot: '/src'}))
+    .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/src'}))
+    
     .pipe(gulp.dest(paths.output + 'amd'));
 });
 
